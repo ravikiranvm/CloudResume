@@ -1,0 +1,101 @@
+body {
+    font-family: 'Architects Daughter', cursive;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    color: #2b5797;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #1e3f7a;
+}
+
+.contact {
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #1e3f7a;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #92b0e8;
+    display: inline-block;
+}
+
+.project {
+    margin-bottom: 40px;
+}
+
+.project-title {
+    font-size: 22px;
+    color: #1e3f7a;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.project-date {
+    font-size: 16px;
+    color: #5c7cba;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.project-details {
+    padding-left: 25px;
+    list-style: none;
+}
+
+.project-details li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.project-details li::before {
+    content: "→";
+    position: absolute;
+    left: -25px;
+    color: #5c7cba;
+}
+
+.work-experience {
+    margin-bottom: 35px;
+}
+
+.role {
+    font-size: 22px;
+    color: #1e3f7a;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.duration {
+    color: #5c7cba;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category-title {
+    font-weight: bold;
+    color: #1e3f7a;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
