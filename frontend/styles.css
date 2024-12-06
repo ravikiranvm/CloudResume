@@ -16,7 +16,7 @@ h1 {
 }
 
 .contact {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 18px;
 }
 
@@ -98,4 +98,15 @@ h2 {
     color: #1e3f7a;
     margin-bottom: 10px;
     text-decoration: underline;
+}
+
+#footer {
+    font-size: 16px;
+    font-weight: normal;
+    color: #1e3f7a;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-top: 2px solid #92b0e8;
+    display: inline-block;
+    padding-top: 15px;
 }

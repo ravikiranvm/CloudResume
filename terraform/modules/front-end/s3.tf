@@ -61,3 +61,11 @@ resource "aws_s3_object" "index-css" {
     content_type = "text/css"
 }
 
+# index page script
+resource "aws_s3_object" "index-js" {
+    bucket = aws_s3_bucket.website_bucket.id
+    key = "script.js"
+    source = "${path.root}/../frontend/script.js"
+    content_type = "application/javascript"
+}
+
