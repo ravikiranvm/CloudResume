@@ -7,3 +7,8 @@ module "front-end" {
 module "back-end" {
   source = "./modules/back-end"
 }
+
+# Referencing monitoring module
+module "monitoring" {
+  source = "./modules/monitoring"
+}
