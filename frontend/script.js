@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     .then(data => {
         let visitor_count = data.updated_total_count;
 
-        document.querySelector('#footer').innerHTML = `This resume caught the eye of ${visitor_count} cusrious minds!`;
+        document.querySelector('#footer').innerHTML = `This resume caught the eye of ${visitor_count} cusrious minds!!`;
     })
     .catch(error => {
         console.log('Error:', error);
