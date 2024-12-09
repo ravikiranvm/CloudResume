@@ -3,7 +3,7 @@ name: Frontend CI
 on:
   push:
     branches:
-      - frontend
+      - main
     paths:
       - 'frontend/**' # Trigger only for changes in the frontend directory
 
