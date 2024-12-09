@@ -35,7 +35,7 @@ jobs:
     - name: Upload files to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
-        args: --acl public-read --delete
+        args: --delete
         source_dir: './frontend'
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
