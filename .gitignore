@@ -47,3 +47,4 @@ node_modules/
 #/package-lock.json
 #/cypress.config.js
 
+.DS_Store
