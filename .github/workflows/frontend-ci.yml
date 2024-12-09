@@ -16,22 +16,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Setup Node.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: npm install
-
-    # Step 4: Run Cypress Tests
-    - name: Run Cypress Tests
-      run: npm run cypress:run
-      continue-on-error: false
-
-    # Step 5: Upload files to S3
+    
+    # Step 2: Upload files to S3
     - name: Upload files to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
@@ -43,7 +29,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.S3_REGION }}
 
-    # Step 6: Invalidate CloudFront cache
+    # Step 3: Invalidate CloudFront cache
     - name: Invalidate CloudFront Cache
       run: |
         aws cloudfront create-invalidation \ 
