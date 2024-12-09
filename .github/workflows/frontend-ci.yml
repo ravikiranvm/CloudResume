@@ -3,7 +3,7 @@ name: Frontend CI
 on:
   push:
     branches:
-      - main
+      - frontend
     paths:
       - 'frontend/**' # Trigger only for changes in the frontend directory
 
@@ -16,15 +16,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    
     # Step 2: Upload files to S3
     - name: Upload files to S3
-      uses: jakejarvis/s3-sync-action@v0.5.1
-      with:
-        args: --delete
-        source_dir: './frontend'
+      run: |
+        aws s3 cp ./frontend s3://${{ secrets.AWS_S3_BUCKET }} --recursive
       env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.S3_REGION }}
@@ -32,9 +28,7 @@ jobs:
     # Step 3: Invalidate CloudFront cache
     - name: Invalidate CloudFront Cache
       run: |
-        aws cloudfront create-invalidation \ 
-          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          --paths: '/*'
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
