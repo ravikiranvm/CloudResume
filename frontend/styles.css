@@ -110,3 +110,8 @@ h2 {
     display: inline-block;
     padding-top: 15px;
 }
+
+.links {
+    color: inherit;
+    text-decoration: none;
+}
