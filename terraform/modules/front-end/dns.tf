@@ -76,6 +76,42 @@ resource "aws_route53_record" "cf-aa-record" {
   
 }
 
+resource "aws_route53_record" "domain_email" {
+    zone_id = aws_route53_zone.main.zone_id
+    name = "raviki.online"
+    type = "MX"
+    ttl = 300
+
+    records = [ "10 mx1.titan.email", "20 mx2.titan.email"]
+
+    depends_on = [aws_acm_certificate.ssl_cert, aws_cloudfront_distribution.s3_distribution]
+  
+}
+
+resource "aws_route53_record" "email_txt_record" {
+    zone_id = aws_route53_zone.main.zone_id
+    name = "raviki.online"
+    type = "TXT"
+    ttl = 300
+
+    records = [ "v=spf1 include:spf.titan.email ~all" ]
+
+    depends_on = [aws_acm_certificate.ssl_cert, aws_cloudfront_distribution.s3_distribution]
+  
+}
+
+resource "aws_route53_record" "email_dkim_record" {
+    zone_id = aws_route53_zone.main.zone_id
+    name = "titan1._domainkey"
+    type = "TXT"
+    ttl = 300
+
+    records = [ "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCKxU9GoAXrlutDH+JdRAJIpMFPM+q+/FCufpqdhJCtXTb0Sx3k5Kwdr+tzSzhbye9gXrc1wiOOZlkP5BEn/8bGujuntapOCJQ6AiE+/6FJ1fcz9VROM6JRZUVdd1JhECWxfgCFug2rg9TCtPvGbAhaXZ/++v1+67gbq6jm5nBeBwIDAQAB" ]
+
+    depends_on = [aws_acm_certificate.ssl_cert, aws_cloudfront_distribution.s3_distribution]
+  
+}
+
 
 
 output "name_servers" {

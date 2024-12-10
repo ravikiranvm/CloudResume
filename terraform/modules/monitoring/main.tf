@@ -5,8 +5,8 @@ resource "aws_sns_topic" "alerts" {
 
 resource "aws_sns_topic_subscription" "alerts_subscription" {
     topic_arn = aws_sns_topic.alerts.arn
-    protocol = "email"
-    endpoint = "mrtravelok@gmail.com"
+    protocol = "https"
+    endpoint = "https://events.eu.pagerduty.com/integration/d2e42a478ac0440ad19dbf44a39c41a2/enqueue"
 }
 
 # Alarm for monthly budget projection
@@ -21,5 +21,25 @@ resource "aws_cloudwatch_metric_alarm" "monthly_cost_projection" {
     threshold = 2
     alarm_description = "Triggered when monthly AWS costs projection exceeds USD 2"
     alarm_actions = [ aws_sns_topic.alerts.arn ]
+}
+
+# Alarm for lambda function invocation errors
+
+resource "aws_cloudwatch_metric_alarm" "lambda_invocation_error" {
+    alarm_name = "LambdaInvocationError"
+    comparison_operator = "GreaterThanThreshold"
+    evaluation_periods = 1
+    metric_name = "Errors"
+    namespace = "AWS/Lambda"
+    period = 3600 # Checks every one hour
+    statistic = "Sum"
+    threshold = 1   # Trigger if there is at least 1 error
+    alarm_description = "Alarm for lambda function invocation error"
+    dimensions = {
+        FunctionName = var.lambda_function_name
+    }
+
+    alarm_actions = [ aws_sns_topic.alerts.arn ]
+  
 }
 
