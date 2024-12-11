@@ -36,15 +36,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore cypress test dependancies
-node_modules/
-#cypress/
-#cypress/fixtures/
-#cypress/downloads/
-#cypress/support/
-#cypress/integration/
-#/package.json
-#/package-lock.json
-#/cypress.config.js
-
 .DS_Store
