@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Cloud Resume Project showcases the use of modern cloud technologies to deploy a highly available, scalable, and monitored personal resume website. This project integrates multiple AWS services, Terraform for Infrastructure as Code (IaC), and a CI/CD pipeline to automate workflows. Advanced monitoring and alerting systems are implemented using tools like PagerDuty, Slack, and Jira to ensure operational efficiency.
+The Cloud Resume [raviki.online](https://raviki.online) showcases the use of AWS services to deploy a highly available, scalable, and monitored personal resume website. This project integrates multiple AWS services, Terraform for Infrastructure as Code (IaC), and a CI/CD pipeline to automate workflows. Advanced monitoring and alerting systems are implemented using tools like PagerDuty, Slack, and Jira to ensure operational efficiency.
 
 ## Features
 
