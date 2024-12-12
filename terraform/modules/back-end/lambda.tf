@@ -34,10 +34,31 @@ resource "aws_iam_role" "visitor_count_exec" {
     })
 }
 
+# Create a policy to access the dyanomo db table
+resource "aws_iam_policy" "count_table_access" {
+    name = "count_table_access"
+    description = "Policy for lambda function to access visitor count table"
+
+    policy = jsonencode({
+        Version = "2012-10-17"
+        Statement = [{
+            Effect = "Allow"
+            Action = [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:Query"
+            ]
+            Resource = "${aws_dynamodb_table.visitor_count.arn}"
+        }]
+    })
+  
+}
+
 #Attach dy.db access policy to the exec role"
 resource "aws_iam_role_policy_attachment" "visitor_count_table" {
     role = aws_iam_role.visitor_count_exec.name
-    policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+    policy_arn = aws_iam_policy.count_table_access.arn
 
 }
 

@@ -35,7 +35,7 @@ def lambda_handler(event, context):
             return {
                 'statusCode': 200,
                 'headers': {
-                    "Access-Control-Allow-Origin": "*",  # CORS header
+                    "Access-Control-Allow-Origin": "https://raviki.online",  # CORS header
                     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",  # Allowed methods
                     "Access-Control-Allow-Headers": "Content-Type"  # Allowed headers
                 },
@@ -53,7 +53,7 @@ def lambda_handler(event, context):
             return {
                 'statusCode': 200,
                 'headers': {
-                    "Access-Control-Allow-Origin": "*",  # CORS header
+                    "Access-Control-Allow-Origin": "https://raviki.online",  # CORS header
                     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",  # Allowed methods
                     "Access-Control-Allow-Headers": "Content-Type"  # Allowed headers
                 },
@@ -64,7 +64,7 @@ def lambda_handler(event, context):
         return {
             'statusCode': 500,
             'headers': {
-                "Access-Control-Allow-Origin": "*",  # CORS header
+                "Access-Control-Allow-Origin": "https://raviki.online",  # CORS header
                 "Access-Control-Allow-Methods": "GET, POST, OPTIONS",  # Allowed methods
                 "Access-Control-Allow-Headers": "Content-Type"  # Allowed headers
             },
