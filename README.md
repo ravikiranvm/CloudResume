@@ -8,7 +8,7 @@ The Cloud Resume [raviki.online](https://raviki.online) showcases the use of AWS
 
 - **Static Website Hosting:** A resume website hosted in an S3 bucket and distributed globally through CloudFront with Origin Access Control (OAC).
 - **Custom Domain:** Route 53 manages domain name configurations, including MX records for domain email.
-- **Visitor Tracking:** Tracks website visitors using a serverless backend with HTTP API Gateway, Lambda, and DynamoDB.
+- **Visitor Tracking:** Tracks website visitors using a serverless backend with REST API Gateway, Lambda, and DynamoDB.
 - **Infrastructure as Code:** Utilizes Terraform to provision and manage AWS resources.
 - **CI/CD Pipeline:** GitHub Actions automates the deployment process for frontend updates.
 - **Monitoring and Alerts:** Integrates CloudWatch, PagerDuty, Slack, and Jira for comprehensive monitoring and incident management.
@@ -57,7 +57,7 @@ The Cloud Resume [raviki.online](https://raviki.online) showcases the use of AWS
 - **terraform/**: Contains Terraform configuration files for provisioning AWS resources.
   - `main.tf`: Entry point for Terraform to orchestrate all modules.
   - `modules/`:
-    - **back-end/**: Provisions HTTP API Gateway, DynamoDB, and Lambda for visitor tracking. The Lambda function updates and fetches visitor counts from the DynamoDB table.
+    - **back-end/**: Provisions REST API Gateway, DynamoDB, and Lambda for visitor tracking. The Lambda function updates and fetches visitor counts from the DynamoDB table.
     - **front-end/**: Provisions S3, CloudFront, SLL Certificate and Route 53 for website hosting and DNS management, including MX records for email.
     - **monitoring/**: Configures CloudWatch alarms for Lambda invocation errors and monthly AWS costs, integrating with PagerDuty, Slack, and Jira.
   - `providers.tf`: Configures AWS provider settings.
@@ -70,7 +70,7 @@ The Cloud Resume [raviki.online](https://raviki.online) showcases the use of AWS
 - **Details:** The website is hosted in an S3 bucket and delivered globally using CloudFront with Origin Access Control (OAC).
 
 ### 2. **Visitor Tracking**
-- **Technology:** HTTP API Gateway, Lambda, DynamoDB
+- **Technology:** REST API Gateway, Lambda, DynamoDB
 - **Details:**
   - API Gateway triggers the Lambda function.
   - The Lambda function updates the visitor count in a DynamoDB table and fetches the count for display.
@@ -93,7 +93,6 @@ The Cloud Resume [raviki.online](https://raviki.online) showcases the use of AWS
 
 ## Future Improvements
 
-- Add unit tests for Lambda function.
 - Expand CI/CD to include other Terraform modules.
 - Implement a resume download option.
 - Add DNSSEC for enhanced domain security.
