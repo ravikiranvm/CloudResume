@@ -1,18 +1,23 @@
 body {
-    font-family: 'Architects Daughter', cursive;
+    /*font-family: 'Architects Daughter', cursive;*/
+    font-family: 'Outfit', sans-serif;
     line-height: 1.8;
     max-width: 800px;
     margin: 10px auto;
     padding: 20px;
-    background-color: white;
-    color: #2b5797;
+    /*background-color: white;*/
+    /*background-color: #F8F9FA; */
+    background-color: #FCFCFC;
+    /*color: #2b5797;*/
+    color: #333333;
 }
 
 h1 {
     font-size: 32px;
     font-weight: normal;
     margin-bottom: 10px;
-    color: #1e3f7a;
+    /*color: #1e3f7a; */
+    color: #000000;
 }
 
 .contact {
@@ -23,10 +28,11 @@ h1 {
 h2 {
     font-size: 28px;
     font-weight: normal;
-    color: #1e3f7a;
+    /*color: #1e3f7a;*/
+    color: #1A1A1A;
     margin-top: 40px;
     margin-bottom: 20px;
-    border-bottom: 2px solid #92b0e8;
+    border-bottom: 2px solid /*#92b0e8;*/ #CCCCCC;
     display: inline-block;
 }
 
@@ -36,14 +42,16 @@ h2 {
 
 .project-title {
     font-size: 22px;
-    color: #1e3f7a;
+    /*color: #1e3f7a;*/
+    color: #2B2B2B;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .project-date {
     font-size: 16px;
-    color: #5c7cba;
+    /*color: #5c7cba;*/
+    color: #666666;
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -62,7 +70,8 @@ h2 {
     content: "→";
     position: absolute;
     left: -25px;
-    color: #5c7cba;
+    /*color: #5c7cba;*/
+    color: #CCCCCC;
 }
 
 .work-experience {
@@ -71,13 +80,15 @@ h2 {
 
 .role {
     font-size: 22px;
-    color: #1e3f7a;
+    /*color: #1e3f7a;*/
+    color: #2B2B2B;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .duration {
-    color: #5c7cba;
+    /*color: #5c7cba;*/
+    color: #666666;
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -95,7 +106,8 @@ h2 {
 
 .skill-category-title {
     font-weight: bold;
-    color: #1e3f7a;
+    /*color: #1e3f7a;*/
+    color: #2B2B2B;
     margin-bottom: 10px;
     text-decoration: underline;
 }
@@ -103,10 +115,11 @@ h2 {
 #footer {
     font-size: 16px;
     font-weight: normal;
-    color: #1e3f7a;
+    /*color: #1e3f7a;*/
+    color: #333333;
     margin-top: 40px;
     margin-bottom: 20px;
-    border-top: 2px solid #92b0e8;
+    border-top: 2px solid /*#92b0e8;*/ #CCCCCC;
     display: inline-block;
     padding-top: 15px;
 }
